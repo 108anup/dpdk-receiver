@@ -141,6 +141,8 @@ print_stats(void)
 			   port_statistics[portid].rx,
 			   port_statistics[portid].dropped);
 
+        // stats called every 10s (verify this)
+        // https://stackoverflow.com/questions/48897320/finding-throughput-when-rx-and-tx-values-are-given
         current_tx_tput = (port_statistics[portid].tx - port_statistics_last[portid].tx)/10;
         current_rx_tput = (port_statistics[portid].rx - port_statistics_last[portid].rx)/10;
         current_drop_tput = (port_statistics[portid].dropped - port_statistics_last[portid].dropped)/10;
